@@ -20,11 +20,9 @@ function renderBlogList() {
         blogPosts.forEach(post => {
             const postElement = document.createElement('article');
             postElement.innerHTML =
-                <article>
-                    <h2>${post.title}</h2>
+                `<h2>${post.title}</h2>
                     <p> By: ${post.username}</p>
-                    <p>${post.content}</p>
-                </article>   
+                    <p>${post.content}</p>`  
             ;
             document.getElementById('blogContainer').appendChild(postElement); 
         });
