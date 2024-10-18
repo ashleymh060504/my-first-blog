@@ -107,6 +107,49 @@ main {
   color: var(--dark);
 }
 
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.toggle-label:before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 5px;
+  transition: transform 0.3s;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  background-color: #333;
+}
+
+.toggle-checkbox:checked + .toggle-label:before {
+  transform: translateX(30px);
+}
+
+.toggle-text {
+  margin-left: 10px;
+  color: #000; 
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-text {
+  color: #fff;
+}
+
 /*
   IDs
 */
