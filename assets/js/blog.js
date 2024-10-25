@@ -44,3 +44,29 @@ const redirectPage = function (url) {
   redirectURL = url;
   location.assign(url);
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.getElementById("toggle");
+    const body = document.body;
+    const toggleText = document.querySelector('.toggle-text');
+  
+    const savedMode = localStorage.getItem("mode")
+    if (savedMode) {
+      body.classList.add(savedMode);
+      toggleText.textContent = savedMode === "dark" ? 'Light Mode' : 'Dark Mode';
+    }
+  
+    toggleButton.addEventListener("click", () => {
+      if (body.classList.contains("light")) {
+        body.classList.remove("light");
+        body.classList.add("dark");
+        localStorage.setItem("mode", "dark");
+        toggleText.textContent = 'Light Mode';
+      } else {
+        body.classList.remove("dark");
+        body.classList.add("light");
+        localStorage.setItem("mode", "light");
+        toggleText.textContent = 'Dark Mode';
+      }
+    });
+  });
