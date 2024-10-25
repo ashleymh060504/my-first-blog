@@ -52,6 +52,7 @@ h6 {
   --disabled: #aaa;
   --error: #ff0022;
   --circle-color: #ffb100;
+  --dark-circle-color: rgb(14, 14, 94);
 }
 
 * {
@@ -83,6 +84,19 @@ main {
 /*
   Classes
 */
+
+.dark aside {
+  background: linear-gradient(
+    var(--dark-accent), 
+    var(--dark-circle-color), 
+    var(--dark-accent)
+  );
+  clip-path: circle(20rem at center);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .dark header,
 .dark footer {
   background-color: var(--dark);

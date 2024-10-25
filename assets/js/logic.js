@@ -3,11 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleButton = document.getElementById("toggle");
   const body = document.body;
   const circle = document.querySelector(".circle");
+  const toggleText = document.querySelector('.toggle-text');
 
   const savedMode = localStorage.getItem("mode")
   if (savedMode) {
     body.classList.add(savedMode);
     circle.classList.add(savedMode);
+    toggleText.textContent = savedMode === "dark" ? 'Light Mode' : 'Dark Mode';
   }
 
   toggleButton.addEventListener("click", () => {
@@ -17,26 +19,20 @@ document.addEventListener("DOMContentLoaded", () => {
       circle.classList.remove("light");
       circle.classList.add("dark");
       localStorage.setItem("mode", "dark");
+      toggleText.textContent = 'Light Mode';
     } else {
       body.classList.remove("dark");
       body.classList.add("light");
       circle.classList.remove("dark");
       circle.classList.add("light");
       localStorage.setItem("mode", "light");
+      toggleText.textContent = 'Dark Mode';
     }
   });
 });
 
 const toggle = document.getElementById('toggle');
-const toggleText = document.querySelector('.toggle-text');
 
-toggle.addEventListener('change', () => {
-    if (toggle.checked) {
-        toggleText.textContent = 'Dark Mode';
-    } else {
-        toggleText.textContent = 'Light Mode';
-    }
-});
 
 // TODO: Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.
 function readLocalStorage() {

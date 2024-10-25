@@ -21,12 +21,8 @@ function handleFormSubmission(event) {
     localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
   redirectPage(`./blog.html`);
 }  
-let redirectURL = '';
 
-const redirectPage = function (url) {
-  redirectURL = url;
-  location.assign(url);
-};
+
 
 // TODO: Add an event listener to the form on submit. Call the function to handle the form submission.
 form.addEventListener('submit', handleFormSubmission);
