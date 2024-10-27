@@ -38,13 +38,6 @@ backButton.addEventListener(`click`, function() {
     redirectPage(`./index.html`);
 });
 
-let redirectURL = '';
-
-const redirectPage = function (url) {
-  redirectURL = url;
-  location.assign(url);
-};
-
 document.addEventListener("DOMContentLoaded", () => {
     const toggleButton = document.getElementById("toggle");
     const body = document.body;
