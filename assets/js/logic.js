@@ -1,9 +1,6 @@
 // TODO: Create logic to toggle the light/dark mode styles for the page and circle. The mode should be saved to local storage.
 
 
-// const toggle = document.getElementById('toggle');
-
-
 // TODO: Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.
 function readLocalStorage() {
   const data = localStorage.getItem(blogPosts);

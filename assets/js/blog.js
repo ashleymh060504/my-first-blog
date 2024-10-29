@@ -4,7 +4,7 @@ const backButton = document.getElementById(`back`);
 // TODO: Create a function that builds an element and appends it to the DOM
 function createAndAppendElement() {
     const newArticle = document.createElement('article');
-    document.main.appendChild(newArticle);
+    mainElement.appendChild(newArticle);
 }
 createAndAppendElement();
 // TODO: Create a function that handles the case where there are no blog posts to display
@@ -32,7 +32,7 @@ function renderBlogList() {
 }
 
 // TODO: Call the `renderBlogList` function
-renderBlogList(blogPosts);
+renderBlogList();
 // TODO: Redirect to the home page using the `redirectPage` function found in logic.js when the back button is clicked
 backButton.addEventListener(`click`, function() {
     redirectPage(`./index.html`);
