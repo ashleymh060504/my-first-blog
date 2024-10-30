@@ -3,7 +3,7 @@
 
 // TODO: Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.
 function readLocalStorage() {
-  const data = localStorage.getItem(blogPosts);
+  const data = localStorage.getItem(`blogPosts`);
   return data ? JSON.parse(data) : [];
 }
 
